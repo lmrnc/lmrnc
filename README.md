@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @lmrnc
-- 👀 I’m interested in music, videogames, football and legos
+- 👀 I’m interested in music, videogames and football
 - 🌱 I’m currently studying a degree in Applied Data Science
 - 📫 You can reach me via e-mail (oleonay@uoc.edu)
 
