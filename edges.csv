@@ -1,0 +1,15 @@
+﻿source,target,relation,weight,cancion,album
+A1,A2,colaboracion,1,Me Porto Bonito,Un Verano Sin Ti
+A1,A3,colaboracion,1,Tarot,Un Verano Sin Ti
+A1,A4,colaboracion,1,Party,Un Verano Sin Ti
+A1,A5,colaboracion,1,Ojitos Lindos,Un Verano Sin Ti
+A1,A6,colaboracion,1,Perfumito Nuevo,DeBÍ TiRAR MáS FOToS
+A1,A7,colaboracion,1,Weltita,DeBÍ TiRAR MáS FOToS
+A1,A8,colaboracion,1,Veldá,DeBÍ TiRAR MáS FOToS
+A1,A9,colaboracion,1,Veldá,DeBÍ TiRAR MáS FOToS
+A1,A10,colaboracion,1,Café con Ron,DeBÍ TiRAR MáS FOToS
+A8,A9,co-colaboracion,1,Veldá,DeBÍ TiRAR MáS FOToS
+A1,A11,colaboracion,1,La Corriente,Un Verano Sin Ti
+A1,A12,colaboracion,1,Otro Atardecer,Un Verano Sin Ti
+A1,A13,colaboracion,1,Andrea,Un Verano Sin Ti
+A1,A14,colaboracion,1,Callaita,Un Verano Sin Ti

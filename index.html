@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Red de colaboraciones musicales | MusicBrainz</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">PEC4 · Visualización de datos</p>
+        <h1>Red de colaboraciones musicales alrededor de Bad Bunny</h1>
+        <p class="lead">
+          Exploración visual de colaboraciones registradas a partir de MusicBrainz,
+          comparando artistas vinculados a <strong>Un Verano Sin Ti</strong> y
+          <strong>DeBÍ TiRAR MáS FOToS</strong>.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard" aria-label="Visualización interactiva">
+        <aside class="control-panel" aria-label="Controles de la visualización">
+          <div>
+            <p class="eyebrow">Interacción</p>
+            <h2>Explorar la red</h2>
+          </div>
+
+          <label class="field">
+            <span>Filtrar por álbum</span>
+            <select id="albumFilter">
+              <option value="todos">Todos los datos</option>
+              <option value="Un Verano Sin Ti">Un Verano Sin Ti</option>
+              <option value="DeBÍ TiRAR MáS FOToS">DeBÍ TiRAR MáS FOToS</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Buscar artista o grupo</span>
+            <input id="searchInput" type="search" placeholder="Ej. Tainy, Omar Courtz">
+          </label>
+
+          <label class="toggle">
+            <input id="showCoCollab" type="checkbox" checked>
+            <span>Mostrar co-colaboraciones</span>
+          </label>
+
+          <div class="legend" aria-label="Leyenda">
+            <h3>Leyenda</h3>
+            <p><span class="swatch central"></span> Artista central</p>
+            <p><span class="swatch uvst"></span> Colaboradores de Un Verano Sin Ti</p>
+            <p><span class="swatch dtmf"></span> Colaboradores de DeBÍ TiRAR MáS FOToS</p>
+            <p><span class="line-sample"></span> Co-colaboración</p>
+          </div>
+
+          <button id="resetButton" type="button">Restablecer vista</button>
+        </aside>
+
+        <section class="viz-panel" aria-labelledby="network-title">
+          <div class="viz-header">
+            <div>
+              <p class="eyebrow">Red nodo-arista</p>
+              <h2 id="network-title">Colaboraciones por canción</h2>
+            </div>
+            <div class="metric-strip" aria-label="Métricas principales">
+              <div>
+                <span id="nodeCount">0</span>
+                <small>nodos visibles</small>
+              </div>
+              <div>
+                <span id="edgeCount">0</span>
+                <small>relaciones visibles</small>
+              </div>
+              <div>
+                <span id="albumCount">0</span>
+                <small>álbumes</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="network-wrap">
+            <svg id="network" role="img" aria-label="Red de colaboraciones musicales"></svg>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-live="polite">
+          <p class="eyebrow">Detalle</p>
+          <div id="detailContent">
+            <h2>Selecciona un nodo o una arista</h2>
+            <p>Haz clic sobre un artista, grupo o relación para ver su información y destacar sus conexiones.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro-band" aria-labelledby="preguntas-title">
+        <div class="section-heading">
+          <p class="eyebrow">Preguntas y objetivos</p>
+          <h2 id="preguntas-title">Qué busca responder la visualización</h2>
+        </div>
+        <div class="question-grid">
+          <article>
+            <h3>Centralidad</h3>
+            <p>¿Qué papel ocupa Bad Bunny como nodo central dentro de la red de colaboraciones seleccionada?</p>
+          </article>
+          <article>
+            <h3>Comparación</h3>
+            <p>¿Cómo se distribuyen los colaboradores entre los dos álbumes usados como referencia?</p>
+          </article>
+          <article>
+            <h3>Relaciones internas</h3>
+            <p>¿Existen conexiones entre colaboradores que no pasen directamente por el artista central?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="analysis-band" aria-labelledby="analysis-title">
+        <div class="section-heading">
+          <p class="eyebrow">Análisis visual</p>
+          <h2 id="analysis-title">Lecturas complementarias</h2>
+        </div>
+        <div class="chart-grid">
+          <article>
+            <h3>Colaboradores por álbum</h3>
+            <div id="albumBars" class="bar-chart" aria-label="Gráfico de barras por álbum"></div>
+          </article>
+          <article>
+            <h3>Tipo de entidad musical</h3>
+            <div id="typeBars" class="bar-chart" aria-label="Gráfico de barras por tipo de entidad"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-band" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">Justificación</p>
+          <h2 id="method-title">Por qué una red interactiva</h2>
+        </div>
+        <div class="method-grid">
+          <article>
+            <h3>Codificación visual</h3>
+            <p>
+              Los nodos codifican entidades musicales y las aristas codifican colaboraciones.
+              El color separa álbumes, el tamaño destaca la centralidad y el trazo discontinuo
+              diferencia una co-colaboración entre artistas.
+            </p>
+          </article>
+          <article>
+            <h3>Interactividad</h3>
+            <p>
+              El filtrado por álbum, la búsqueda y la selección directa permiten comparar subconjuntos,
+              detectar conexiones concretas y reducir ruido visual durante la exploración.
+            </p>
+          </article>
+          <article>
+            <h3>Limitaciones</h3>
+            <p>
+              La red es una muestra acotada y no representa toda la discografía ni todas las relaciones
+              disponibles en MusicBrainz. Su valor principal es explicar estructura, comparación y método.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
