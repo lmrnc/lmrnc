@@ -87,7 +87,8 @@ h3 {
 
 .intro-band,
 .analysis-band,
-.method-band {
+.method-band,
+.ai-band {
   padding: 44px clamp(20px, 5vw, 72px);
 }
 
@@ -379,6 +380,78 @@ button:hover {
 .bar-fill {
   height: 100%;
   border-radius: 999px;
+}
+
+.ai-band {
+  padding-top: 8px;
+}
+
+.ai-band details {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.ai-band summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ai-band summary::-webkit-details-marker {
+  display: none;
+}
+
+.ai-band summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--soft-panel);
+  color: var(--central);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.ai-band details[open] summary::after {
+  content: "-";
+}
+
+.ai-band strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.ai-content {
+  border-top: 1px solid var(--line);
+  padding: 20px;
+  color: var(--muted);
+}
+
+.ai-content p {
+  max-width: 980px;
+  margin: 0 0 14px;
+}
+
+.ai-content p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-content code {
+  color: var(--ink);
+  background: var(--soft-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
 }
 
 @media (max-width: 1100px) {
